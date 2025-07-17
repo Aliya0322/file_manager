@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Файловый менеджер в браузере</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
+</head>
+<body>
+    <div class="file-manager">
+        <h1>Файловый менеджер</h1>
+        
+
+        <div class="drop-zone">
+            Перетащите файлы сюда или
+            <button class="btn-select">Выбрать файлы</button>
+            <input type="file" id="file-input" multiple style="display: none;">
+        </div>
+        
+        
+        <div class="filters">
+            <select class="filter-type">
+                <option value="all">Все типы</option>
+                <option value="image">Изображения</option>
+                <option value="text">Текстовые</option>
+                <option value="other">Другие</option>
+            </select>
+            <input type="range" class="filter-size" min="0" max="5000" value="5000">
+            <span class="size-value">5 MB</span>
+        </div>
+        
+        <div class="files-container"></div>
+        
+        <button class="btn-download-all" disabled>Скачать всё как ZIP</button>
+    </div>
+
+    <script type="module" src="js/app.js"></script>
+    <script src="js/fileManager.js"></script>
+    <script src="js/ui.js"></script>
+
+</body>
+</html>
