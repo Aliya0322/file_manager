@@ -22,6 +22,11 @@ body {
     transition: all 0.3s;
 }
 
+.drop-zone.dragover {
+    border-color: #4CAF50;
+    background-color: #f0fff0;
+}
+
 .btn-select {
     background: #4CAF50;
     color: white;

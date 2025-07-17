@@ -13,15 +13,22 @@ function UIManager(fileManager) {
         
         dropZone.on('dragover', function(e) {
             e.preventDefault();
-            
+            e.stopPropagation();
+            $(this).addClass('dragover');
         });
         
         dropZone.on('dragleave mouseleave', function(e) {
             e.preventDefault();
+            e.stopPropagation();
+            $(this).removeClass('dragover');
         });
         
         dropZone.on('drop', function(e) {
             e.preventDefault();
+            e.stopPropagation();
+            setTimeout(() => {
+                $(this).removeClass('dragover');
+            }, 100);
             
             if (e.originalEvent.dataTransfer.files.length) {
                 fileManager.addFiles(e.originalEvent.dataTransfer.files);
