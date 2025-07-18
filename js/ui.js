@@ -26,12 +26,11 @@ function UIManager(fileManager) {
         dropZone.on('drop', function(e) {
             e.preventDefault();
             e.stopPropagation();
-            setTimeout(() => {
-                $(this).removeClass('dragover');
-            }, 100);
+            dropZone.removeClass('dragover');
             
-            if (e.originalEvent.dataTransfer.files.length) {
-                fileManager.addFiles(e.originalEvent.dataTransfer.files);
+            const files = e.originalEvent.dataTransfer.files;
+            if (files.length) {
+                this.fileManager.addFiles(files);
                 this.renderFiles();
             }
         }.bind(this));
