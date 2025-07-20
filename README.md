@@ -41,6 +41,12 @@
 └─ zipExport.js // создание ZIP
 ```
 
+
+## 🚀 Быстрый старт
+Клонируйте репозиторий:
+```bash
+git clone https://github.com/Aliya0322/file_manager.git
+
 ## Технологический стек
 
 - HTML5 FileAPI (File, FileList, FileReader)
